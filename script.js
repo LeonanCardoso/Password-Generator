@@ -1,0 +1,44 @@
+
+let sliderElement = document.querySelector("#slider");
+let buttonElement = document.querySelector("#button");
+
+let sizePassword = document.querySelector("#valor");
+let password = document.querySelector("#password");
+
+let containerPassword = document.querySelector("#container-password");
+
+let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@";
+let newPassword = "";
+let copySuccess = document.querySelector("#successMessage")
+sizePassword.innerHTML = sliderElement.value;
+
+slider.oninput = function(){
+    sizePassword.innerHTML = this.value;
+}
+
+function passwordGenerator(){
+
+    let pass = "";
+
+    for(let i = 0,n = charset.length; i < sliderElement.value; ++i){
+        pass += charset.charAt(Math.floor(Math.random() * n))
+    }
+
+    containerPassword.classList.remove("hide");
+    password.innerHTML = pass;
+    newPassword = pass;
+    copySuccess.classList.add("hide");
+}
+
+function copyPass(){
+    navigator.clipboard.writeText(newPassword);
+}
+function successMessagAlert(){  
+    successMessage.innerHTML = "Senha copiada com Sucesso!";
+    copySuccess.classList.remove("hide");   
+}
+
+// function passwordGenerator(){  
+//     successMessage.classList.add("hidetext");
+    
+// };

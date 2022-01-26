@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Gerador de senhas, password generator">
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <img class="logo" src="https://i.ibb.co/m8YvYBr/logo.png">
+    <main class="container-input">
+        <span>Tamanho <span id="valor"></span> caracteres</span>
+        <input id="slider" class="slider" type="range" min="5" max="25" value="15">
+        <div id="selector">
+            <div class="selectBtn"></div>
+        </div>
+
+        <button id="button" class="button-cta" onclick="passwordGenerator()">Gerar Senha</button>
+    </main>
+
+    <div id="container-password" class="container-password hide">
+        <span class="title">Sua senha gerada foi:</span>
+        <span id="password" class="password" onclick="alertCopy()"></span>
+        <div class="buttonCopy" onclick="copyPass()">
+            <button type="button" class="copyCofirm" onclick="successMessagAlert()">
+                <span class="button-text">Copiar Senha</span>
+                <span class="button-icon">
+                    <ion-icon name="copy-outline"></ion-icon>
+                </span>
+            </button>
+        </div>
+        <span id="successMessage" name="copy-success" class="copySuccess">
+        </span>
+    </div>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
