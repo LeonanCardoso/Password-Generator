@@ -37,8 +37,3 @@ function successMessagAlert(){
     successMessage.innerHTML = "Senha copiada com Sucesso!";
     copySuccess.classList.remove("hide");   
 }
-
-// function passwordGenerator(){  
-//     successMessage.classList.add("hidetext");
-    
-// };
